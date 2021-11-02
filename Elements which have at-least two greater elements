@@ -1,0 +1,31 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        
+        int max = Integer.MIN_VALUE;
+        int secmax = Integer.MIN_VALUE;
+        
+        for(int i=0; i<A.length; i++)
+        {
+            if(A[i]>max)
+            {
+                secmax = max;
+                max = A[i];
+            }
+            else if(A[i]<max && A[i]>secmax)
+            {
+                secmax=A[i];
+            }
+        }
+        
+        int B[] = new int[A.length-2];
+        int idx = 0;
+        for(int i=0; i<A.length; i++)
+        {
+            if(A[i]!=secmax && A[i]!=max)
+            {
+                B[idx++]=A[i];
+            }
+        }
+        return B;
+    }
+}
