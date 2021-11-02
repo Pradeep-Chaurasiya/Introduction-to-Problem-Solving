@@ -1,0 +1,34 @@
+public class Solution {
+    public int solve(int[] A) {
+        
+        // ArrayList<Integer> evenlist = new ArrayList<Integer>();
+        // ArrayList<Integer> oddlist = new ArrayList<Integer>();
+        
+        int maxeven = Integer.MIN_VALUE;
+        int minodd = Integer.MAX_VALUE;
+        
+        for(int i=0; i<A.length; i++)
+        {
+            if(A[i]%2==0)
+            {
+               if(A[i]>maxeven)
+               {
+                   maxeven=A[i];
+               }
+            }
+            else
+            {
+                if(A[i]<minodd)
+                {
+                    minodd=A[i];
+                }
+            }
+        }
+        
+        // int d = (Collections.max(evenlist)-Collections.min(oddlist));
+        
+        int d = (maxeven-minodd);
+        
+        return d;
+    }
+}
